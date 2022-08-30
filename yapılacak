@@ -1,0 +1,11 @@
++ giriş yapı yaz
++ user kendine para eklediğinde o kalsın ondan alış veriş yapsın
++ user item eklesin resmiyle
++ eklenen itemler listelensin
+- satın alınınca para düşsün ve aşağya sepet gelsin
+- sepeti db ye bağla(yani giriş yapınca sepet otomatik aşağı gelsin)
+- sat yapınca ürün eksilsin parası gelsin
+- ürün sepeten düşsün
+- ortadaki sayıdan toplu alım olsun ama parası kadar alabilsin
+- üye olduktan sonra anasayfaya yönlendirilsin
+- Alertler Yap
