@@ -5,8 +5,9 @@ import Main from './Components/Main';
 
 function App() {
   
+
   useEffect(() => {
-    //getItem();
+    getItem();
     getUser(1);
     //addMoney(5);
     //removeMoney(5);

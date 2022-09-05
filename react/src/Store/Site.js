@@ -14,7 +14,7 @@ export const Site = createSlice({
             console.log("user",state.user);
         },
         setItem: (state, action) => {
-            state.item = action.payload;
+            state.item = action.payload.items;
             console.log("item",state.item);
         },
         deleteUser: (state, action) => {

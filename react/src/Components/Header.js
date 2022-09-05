@@ -57,7 +57,7 @@ const Header = () => {
                 <div className='flex pl-5'> 
                     <div className='group relative'>
                         <button className='btn'>Giriş Yap</button>
-                        <div tabindex="0" class="opacity-0 invisible absolute z-[3] top-full w-44 rounded p-1 space-y-1 bg-slate-400 group-focus-within:mt-1 group-focus-within:opacity-100 group-focus-within:visible transition-all ">
+                        <div tabIndex="0" className="opacity-0 invisible absolute z-[3] top-full w-44 rounded p-1 space-y-1 bg-slate-400 group-focus-within:mt-1 group-focus-within:opacity-100 group-focus-within:visible transition-all ">
                             <div className='w-fıll flex justify-center'>
                                 <h3>Giriş yap</h3>
                             </div>
@@ -80,7 +80,7 @@ const Header = () => {
                     
                     <div className='group relative'>
                         <button className='btn ml-3'>Üye Ol</button>
-                        <div tabindex="0" class="opacity-0 invisible absolute z-[3] top-full w-44 rounded p-1 space-y-1 bg-slate-400 group-focus-within:mt-1 group-focus-within:opacity-100 group-focus-within:visible transition-all ">
+                        <div tabIndex="0" className="opacity-0 invisible absolute z-[3] top-full w-44 rounded p-1 space-y-1 bg-slate-400 group-focus-within:mt-1 group-focus-within:opacity-100 group-focus-within:visible transition-all ">
                             {/* Üye Ol */}
                         </div>
                     </div>
@@ -96,7 +96,7 @@ const Header = () => {
                 <div className='flex pr-5'>
                     <div className='group relative'>
                         <button className='btn mr-3'>Para Ekle</button>
-                        <div tabindex="0" class="opacity-0 invisible absolute z-[3] top-full w-40 rounded p-1 space-y-1 bg-slate-400 group-focus-within:mt-1 group-focus-within:opacity-100 group-focus-within:visible transition-all ">
+                        <div tabIndex="0" className="opacity-0 invisible absolute z-[3] top-full w-40 rounded p-1 space-y-1 bg-slate-400 group-focus-within:mt-1 group-focus-within:opacity-100 group-focus-within:visible transition-all ">
                             <form onSubmit={onSubmit_money}>
                                 <div className='flex items-center'>
                                     <h6 className='text-xs'>Miktar: </h6> 
