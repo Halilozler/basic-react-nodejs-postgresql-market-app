@@ -2,11 +2,29 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux"
 import { deleteUser } from '../Store/Site';
 import { addMoney, logIn } from './../Tools/dbComment';
+import AddItem from './AddItem';
+
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        },
+    };
 
 const Header = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [money, setMoney] = useState(0);
+
+    const [modalIsOpen, setIsOpen] = React.useState(false);
 
     const { user } = useSelector(state => state.Site);
     const dispatch = useDispatch()
@@ -23,6 +41,14 @@ const Header = () => {
         if(money != 0 ){
             addMoney(money);
         }
+    }
+
+    function openModal() {
+        setIsOpen(true);
+    }
+    
+    function closeModal() {
+        setIsOpen(false);
     }
 
     return (
@@ -82,10 +108,19 @@ const Header = () => {
                             </form>
                         </div>
                     </div>
-                    <button className='btn'>Ürün Ekle</button>
+                    <button className='btn' onClick={openModal}>Ürün Ekle</button>
                 </div>
             </>
             }
+
+        <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            ariaHideApp={false}
+        >
+            <AddItem closeModel={closeModal}/>
+        </Modal>
         </>
     )
 }

@@ -11,9 +11,9 @@ const Card = () => {
                 <p>$ 0.5</p>
             </div>
             <div className=' w-full flex justify-center mt-2'>
-                <button className=' rounded-l-lg hover:bg-slate-400 active:bg-slate-500'>Sat</button>
+                <button className=' rounded-l-lg hover:bg-red-700 active:bg-red-800 bg-red-600'>Sat</button>
                 <span className='flex justify-center items-center w-10 border-[1px] border-black font-bold'>0</span>
-                <button className='rounded-r-lg hover:bg-slate-400 active:bg-slate-500'>Satın Al</button>
+                <button className='rounded-r-lg hover:bg-teal-500 active:bg-teal-600 bg-teal-400'>Satın Al</button>
             </div>
         </div>
     )

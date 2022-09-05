@@ -9,6 +9,9 @@
   .btn{
     @apply rounded hover:bg-green-900
   }
+  .inpt{
+    @apply rounded border-[1px] border-black w-72 h-10
+  }
 }
 
 body {
