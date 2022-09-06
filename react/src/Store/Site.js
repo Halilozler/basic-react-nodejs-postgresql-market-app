@@ -11,11 +11,9 @@ export const Site = createSlice({
     reducers: {
         setUser: (state, action) => {
             state.user = action.payload;
-            console.log("user",state.user);
         },
         setItem: (state, action) => {
             state.item = action.payload.items;
-            console.log("item",state.item);
         },
         deleteUser: (state, action) => {
             state.user = 0;

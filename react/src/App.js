@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     getItem();
-    getUser(1);
+    //getUser(1);
     //addMoney(5);
     //removeMoney(5);
 

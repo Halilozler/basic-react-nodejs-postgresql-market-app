@@ -1,6 +1,6 @@
 import axios from 'axios';
 import store from "../Store";
-import site, { setItem, setUser } from './../Store/Site';
+import { setItem, setUser } from './../Store/Site';
 
 const baseUrl = "http://localhost:8000/";
 
