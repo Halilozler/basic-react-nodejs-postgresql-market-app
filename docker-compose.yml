@@ -31,5 +31,7 @@ services:
     build: ./react
     ports:
       - "3000:3000"
+    volumes:
+      - "./react/src/img/:/folder/in/container"
     depends_on:
       - backend

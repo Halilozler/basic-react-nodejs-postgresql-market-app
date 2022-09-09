@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Header from './Components/Header';
-import { getItem, getUser, addMoney, removeMoney, logUp, buy, sell, logIn } from './Tools/dbComment';
+import { getItem } from './Tools/dbComment';
 import Main from './Components/Main';
 
 function App() {

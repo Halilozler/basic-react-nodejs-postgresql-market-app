@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux"
 import { deleteUser } from '../Store/Site';
-import { addMoney, logIn } from './../Tools/dbComment';
+import { addMoney, logIn, logUp } from './../Tools/dbComment';
 import AddItem from './AddItem';
 
 import ReactDOM from 'react-dom';
@@ -22,6 +22,8 @@ const customStyles = {
 const Header = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
     const [money, setMoney] = useState(0);
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -33,6 +35,13 @@ const Header = () => {
         e.preventDefault();
         if(username != "" && password != ""){
             logIn({username: username, password: password});
+        }
+    }
+
+    const onSubmitLogUp = (e) => {
+        e.preventDefault();
+        if(username != "" && password != "" && name != "" && surname != ""){
+            logUp({name: name, surname: surname, username: username, password: password});
         }
     }
 
@@ -73,7 +82,6 @@ const Header = () => {
                                 <div className='relative w-full'>
                                     <button className='btn h-6 mt-3 '>Giriş Yap</button>
                                 </div>
-                                
                             </form>
                         </div>
                     </div>
@@ -81,7 +89,27 @@ const Header = () => {
                     <div className='group relative'>
                         <button className='btn ml-3'>Üye Ol</button>
                         <div tabIndex="0" className="opacity-0 invisible absolute z-[3] top-full w-44 rounded p-1 space-y-1 bg-slate-400 group-focus-within:mt-1 group-focus-within:opacity-100 group-focus-within:visible transition-all ">
-                            {/* Üye Ol */}
+                            <form onSubmit={onSubmitLogUp}>
+                            <div className='flex items-center'>
+                                    <h6 className='text-xs'>Name: </h6> 
+                                    <input className=' w-24 rounded ml-2' onChange={(e) => setName(e.target.value)}></input>
+                                </div>
+                                <div className='flex items-center'>
+                                    <h6 className='text-xs'>Surname: </h6> 
+                                    <input className=' w-24 rounded ml-2' onChange={(e) => setSurname(e.target.value)}></input>
+                                </div>
+                                <div className='flex items-center'>
+                                    <h6 className='text-xs'>Username: </h6> 
+                                    <input className=' w-24 rounded ml-2' onChange={(e) => setUsername(e.target.value)}></input>
+                                </div>
+                                <div className='flex items-center mt-2'>
+                                    <h6 className='text-xs'>password: </h6> 
+                                    <input className=' w-24 rounded ml-[10px]' onChange={(e) => setPassword(e.target.value)}></input>
+                                </div>
+                                <div className='relative w-full'>
+                                    <button className='btn h-6 mt-3'>Üye Ol</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div> 

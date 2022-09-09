@@ -27,9 +27,9 @@ const Card = ({item, basket, money}) => {
     }
 
     return (
-        <div className='rounded-2xl border-[1px] border-black h-80 w-60 ml-5 mt-5 bg-white'>
+        <div className='rounded-2xl border-[1px] border-black h-80 w-60 ml-5 mt-5 bg-white overflow-hidden'>
             <div className='w-full h-52 rounded-t-2xl'>
-                    <img className=' w-full h-full p-1' src={require(`../img/${item.image_url}`)}/>
+                    <img className=' w-full h-full' src={require(`../img/${item.image_url}`)}/>
             </div>
             <div className=' w-full h-14 pl-2'>
                 <h1 className=' text-2xl font-bold'>{item.name}</h1>

@@ -63,6 +63,8 @@ const logIn = (req, res) => {
 
 const addItem = (req, res) => {
     const uploadDir = "../react/src/img";
+    //console.log("yol",__dirname + "/../../../../");
+    //const uploadDir = __dirname + "/../../../../frontend/usr/src/app/src/img";
     if(!fs.existsSync(uploadDir)){
         fs.mkdirSync(uploadDir);
     }
@@ -70,6 +72,7 @@ const addItem = (req, res) => {
     let uploadImage = req.files.image;
     let name = `${uuidv4()}.${uploadImage.mimetype.split("/")[1]}`
     let uploadPath = __dirname + "/../../react/src/img/" + name;
+    //let uploadPath = __dirname + "/../../frontend/usr/src/app/src/img" + name;
 
     uploadImage.mv(uploadPath, () => {
         global.db.query(dbCommand.addItem, [name, req.body.name, req.body.price]).then(() => {
