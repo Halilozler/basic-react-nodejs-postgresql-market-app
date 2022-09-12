@@ -30,6 +30,7 @@ const AddItem = ({closeModel}) => {
                 </div>
                 <div>
                     <input className='inpt mt-5' type="file" onChange={(e) => {setImage(e.target.files[0])}}/>
+                    <p className=' text-red-700 text-sm'>*Docker ile çalıştırmada ürün resmi eklenmez.</p>
                 </div>
                 <div className='w-full'>
                     <button className='mt-5 rounded hover:bg-slate-300 active:bg-slate-500 float-right' type='submit'>Kaydet</button>

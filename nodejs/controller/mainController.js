@@ -62,26 +62,34 @@ const logIn = (req, res) => {
 }
 
 const addItem = (req, res) => {
-    const uploadDir = "../react/src/img";
-    //console.log("yol",__dirname + "/../../../../");
-    //const uploadDir = __dirname + "/../../../../frontend/usr/src/app/src/img";
-    if(!fs.existsSync(uploadDir)){
-        fs.mkdirSync(uploadDir);
-    }
+    try {
+        const uploadDir = "../react/src/img";
+        //console.log("yol",__dirname + "/../../../../");
+        //const uploadDir = __dirname + "/../../../../frontend/usr/src/app/src/img";
+        if(!fs.existsSync(uploadDir)){
+            fs.mkdirSync(uploadDir);
+        }
 
-    let uploadImage = req.files.image;
-    let name = `${uuidv4()}.${uploadImage.mimetype.split("/")[1]}`
-    let uploadPath = __dirname + "/../../react/src/img/" + name;
-    //let uploadPath = __dirname + "/../../frontend/usr/src/app/src/img" + name;
+        let uploadImage = req.files.image;
+        let name = `${uuidv4()}.${uploadImage.mimetype.split("/")[1]}`
+        let uploadPath = __dirname + "/../../react/src/img/" + name;
+        //let uploadPath = __dirname + "/../../frontend/usr/src/app/src/img" + name;
 
-    uploadImage.mv(uploadPath, () => {
-        global.db.query(dbCommand.addItem, [name, req.body.name, req.body.price]).then(() => {
+        uploadImage.mv(uploadPath, () => {
+            global.db.query(dbCommand.addItem, [name, req.body.name, req.body.price]).then(() => {
+                    res.status(201).send("Ürün Başrılı Bir Şekilde Oluşturuldu")
+                }).catch((err) => {
+                    res.status(400);
+                })
+            });
+    } catch (error) {
+        global.db.query(dbCommand.addItem, ["none.jpg", req.body.name, req.body.price]).then(() => {
                 res.status(201).send("Ürün Başrılı Bir Şekilde Oluşturuldu")
             }).catch((err) => {
                 res.status(400);
             })
-        });
-        
+    }
+    
 }
 
 const getItem = (req, res) => {
