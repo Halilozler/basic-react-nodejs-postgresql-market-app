@@ -47,10 +47,12 @@ async function connDB() {
 
 const port = process.env.PORT || 8000;
 async function startServer() {
-    await connDB();
+    await connDB().then(() => {
+      app.listen(port, () => {
+          console.log("Sunucu başlatıldı");
+      });
+    })
 
-    app.listen(port, () => {
-        console.log("Sunucu başlatıldı");
-    });
+    
 }
 startServer();
